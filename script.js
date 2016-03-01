@@ -1,4 +1,4 @@
-var body = document.getElementsByTagName(body);
+var divs = document.getElementsByTagName('div');
 
 function randomColor() {
     var x = Math.round(0xffffff * Math.random()).toString(16);
@@ -15,3 +15,12 @@ function board() {
     }
 }
 board();
+
+window.setInterval(flash, 2000);
+
+function flash(){ 
+    for (i=0;i<divs.length;i++){
+        divs[i].style.backgroundColor = randomColor();
+    }
+}
+
